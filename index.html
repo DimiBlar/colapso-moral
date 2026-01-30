@@ -22,11 +22,40 @@
             margin-bottom: 20px;
             border: 2px solid #ff0000; /* Borde rojo punk */
         }
+       /* ESTILO DEL LOGO (Actualizado) */
+        .profile-pic {
+            width: 120px; /* Un poco más grande */
+            height: auto; /* Para que no se deforme */
+            border-radius: 50%; /* Si quieres que siga siendo redondo */
+            margin-bottom: 20px;
+            /* Quitamos el fondo gris y el borde rojo para que tu logo brille solo */
+        }
+
+        /* TÍTULO CON GLITCH */
         h1 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
             margin-bottom: 5px;
+            position: relative;
+            cursor: pointer; /* Manita al pasar mouse */
+        }
+
+        /* El efecto al pasar el mouse */
+        h1:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #d60000; /* Se pone rojo sangre */
+            text-shadow: 2px 2px #00fff2, -2px -2px #f000ff; /* Efecto 3D Roto */
+        }
+
+        /* La Animación del Temblor */
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
         }
         p {
             color: #888;
@@ -67,7 +96,7 @@
 </head>
 <body>
 
-    <div class="profile-pic"></div>
+    <img src="logo.png.png" class="profile-pic" alt="Logo Colapso Moral">
 
     <h1>Colapso Moral</h1>
     <p>La ropa no acaba en el excusado.</p>
